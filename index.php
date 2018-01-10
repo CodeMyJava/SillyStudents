@@ -5,11 +5,13 @@
     </head>
     <body>
     <?php
+    
+        //Including the student Class
         include('Student.php');
 
         //Creating the students array.
         $students = array();
-        
+
         //Adding the first Student
         $first = new Student();
         $first->surname = "Doe";
@@ -32,9 +34,21 @@
         $second->add_grade(80);
         $second->add_grade(50);
         $students['a456'] = $second;
-        
-        //Adding t he thir
 
+        //Adding myself
+        $third = new Student();
+        $third->surname = "Kim";
+        $third->first_name = "John";
+        $third->add_email('home','john@kim.com');
+        $third->add_email('work','jdoe@hello.com');
+        $third->add_grade(80);
+        $third->add_grade(80);
+        $third->add_grade(80);
+        $students['A00992503'] = $third;
+
+        //sorting the students array
+        ksort($students);
+                
         foreach($students as $student)
             echo $student->toString();
     ?>
