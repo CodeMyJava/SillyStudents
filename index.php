@@ -5,7 +5,7 @@
     </head>
     <body>
     <?php
-    
+   
         //Including the student Class
         include('Student.php');
 
